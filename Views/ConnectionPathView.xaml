@@ -1,0 +1,66 @@
+﻿<mah:MetroWindow x:Class="MyDiary.Views.ConnectionPathView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:viewmodels="clr-namespace:MyDiary.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ConnectionPathViewModel}"
+                 mc:Ignorable="d"
+        Title="Ustawienia" 
+                 Height="250" 
+                 Width="400"
+                 Name ="ConnectionPathWindow"
+                 WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label  Content="Adres Serwera" Margin="5"/>
+        <TextBox Text="{Binding ConnectionSettings.ServerAddress, 
+            UpdateSourceTrigger=PropertyChanged, 
+            ValidatesOnDataErrors=True}" 
+                 Grid.Column="1" 
+                 Margin="5"/>
+        <Label Content="Nazwa Serwera" Grid.Row="1" Margin="5"/>
+        <TextBox Text="{Binding ConnectionSettings.ServerName, 
+            UpdateSourceTrigger=PropertyChanged, 
+            ValidatesOnDataErrors=True}"
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 Margin="5"/>
+        <Label Content="Nazwa Bazy Danych" Grid.Row="2" Margin="5"/>
+        <TextBox Text="{Binding ConnectionSettings.DatabaseName, 
+            UpdateSourceTrigger=PropertyChanged, 
+            ValidatesOnDataErrors=True}" 
+                 Grid.Row="2" 
+                 Grid.Column="1" 
+                 Margin="5"/>
+        <Label Content="Login" Grid.Row="3" Margin="5"/>
+        <TextBox Text="{Binding ConnectionSettings.UserName, 
+            UpdateSourceTrigger=PropertyChanged, 
+            ValidatesOnDataErrors=True}"
+                 Grid.Row="3" 
+                 Grid.Column="1" 
+                 Margin="5"/>
+        <Label Content="Hasło" Grid.Row="4" Margin="5"/>
+        <TextBox Text="{Binding ConnectionSettings.DatabasePassword, 
+            UpdateSourceTrigger=PropertyChanged, 
+            ValidatesOnDataErrors=True}"
+                 Grid.Row="4" 
+                 Grid.Column="1" 
+                 Margin="5"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right">
+            <Button Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=ConnectionPathWindow}" Content="Anuluj" Height="25" Width="100" Margin="5"/>
+            <Button Command="{Binding ConfirmCommand}" Content="Potwierdż" Height="25" Width="100" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>
