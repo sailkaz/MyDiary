@@ -3,19 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">(LocalDb)</Value>
+      <Value Profile="(Default)"></Value>
     </Setting>
     <Setting Name="ServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">MSSQLLocalDB</Value>
+      <Value Profile="(Default)"></Value>
     </Setting>
     <Setting Name="DbName" Type="System.String" Scope="User">
       <Value Profile="(Default)">MyDiary</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">kazsta</Value>
+      <Value Profile="(Default)"></Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">makfa</Value>
+      <Value Profile="(Default)"></Value>
     </Setting>
   </Settings>
 </SettingsFile>
